@@ -1,0 +1,24 @@
+<div class="modal-body">
+  <div class="col-md-12">
+      <div class="row">
+          <div class="form-group">
+              <label for="TENLOAI">Tên loại sản phẩm</label>
+              <input id="TENLOAI" class="form-control" type="text" [(ngModel)]="TENLOAI">
+          </div>
+
+          <div class="form-group">
+              <label for="TRANGTHAI">Tình trạng</label>
+              <select name="" id="TRANGTHAI" class="form-select" [(ngModel)]="TRANGTHAI">
+                  <option value="0">Hết Hàng</option>
+                  <option value="1">Còn Hàng</option>
+              </select>
+          </div>
+
+      </div>
+  </div>
+</div>
+<div class="modal-footer justify-content-between">
+  <button type="button" class="btn btn-outline-primary" data-dismiss="modal">Đóng</button>
+  <button type="button" class="btn btn-primary" (click)="addNow1()" *ngIf="IDLOAI== 0">Lưu</button>
+  <button type="button" class="btn btn-primary" (click)="editNow1(IDLOAI)" *ngIf="IDLOAI != 0">Cập nhật</button>
+</div>

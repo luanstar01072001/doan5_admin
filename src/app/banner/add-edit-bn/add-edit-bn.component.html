@@ -1,0 +1,15 @@
+<div class="modal-body">
+  <div class="col-md-12">
+      <div class="row">
+        <div class="form-group">
+          <label for="BINHLUAN">Hình ảnh</label>
+          <input id="BINHLUAN" class="form-control" type="file" [(ngModel)]="BINHLUAN" (change)="chonhinhanh1($event)">
+        </div>
+      </div>
+  </div>
+</div>
+<div class="modal-footer justify-content-between">
+  <button type="button" class="btn btn-outline-primary" data-dismiss="modal">Đóng</button>
+  <button type="button" class="btn btn-primary" (click)="addNow6()" *ngIf="id== 0">Lưu</button>
+  <button type="button" class="btn btn-primary" (click)="editNow6(id)" *ngIf="id != 0">Cập nhật</button>
+</div>

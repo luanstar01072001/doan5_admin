@@ -1,0 +1,29 @@
+<!-- CSS only -->
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
+<div class="modal-body">
+  <div class="col-md-12">
+    <div class="row">
+      <div class="form-group">
+        <label for="TENNCC">Tên nhà cung cấp</label>
+        <input id="TENNCC" class="form-control" type="text" [(ngModel)]="TENNCC">
+      </div>
+      <div class="form-group">
+        <label for="DIACHI">Địa chỉ</label>
+        <input id="DIACHI" class="form-control" type="text" [(ngModel)]="DIACHI">
+      </div>
+      <div class="form-group ">
+        <label for="SODIENTHOAI">Số điện thoại</label>
+        <input id="SODIENTHOAI" class="form-control" type="text" [(ngModel)]="SODIENTHOAI">
+      </div>
+      <div class="form-group ">
+        <label for="EMAIL">Email</label>
+        <input id="EMAIL" class="form-control" type="text" [(ngModel)]="EMAIL">
+      </div>
+    </div>
+  </div>
+</div>
+<div class="modal-footer justify-content-between">
+  <button type="button" class="btn btn-outline-primary" data-dismiss="modal">Đóng</button>
+  <button type="button" class="btn btn-primary" (click)="addNow2()" *ngIf="NccID== 0">Lưu</button>
+  <button type="button" class="btn btn-primary" (click)="editNow2(NccID)" *ngIf="NccID != 0">Cập nhật</button>
+</div>

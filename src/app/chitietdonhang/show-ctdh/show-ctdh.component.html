@@ -1,0 +1,109 @@
+<!-- CSS only -->
+<div class="content-wrapper" style="
+  position: relative;
+  top: -669px;
+  left: 37px;">
+  <!-- Content Header (Page header) -->
+  <section class="content-header">
+    <div class="container-fluid">
+      <div class="row mb-2">
+        <div class="col-sm-6">
+          <!-- <button type="button" class="btn btn-default" data-toggle="modal" data-target="#modal-xl"
+            (click)="addClick()">
+            Thêm mới sản phẩm
+          </button> -->
+          <br>
+          <br>
+          <!-- <div>
+            <select name="" #filter class="form-select form-select-lg mb-3" aria-label=".form-select-lg example" (change)="filterByCate($event)">
+              <option value="">--- Tất cả sản phẩm ---</option>
+              <option value="{{item.IDLOAI}}" *ngFor="let item of dsLoai">{{item.TENLOAI}}</option>
+            </select>
+          </div> -->
+          <br>
+          <div class="modal fade" id="modal-xl">
+            <div class="modal-dialog modal-xl">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h4 class="modal-title">{{AddEdit}}</h4>
+                  <button type="button" class="close" data-dismiss="modal" aria-label="Close" (click)="closeClick()">
+                    <span aria-hidden="true">&times;</span>
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section class="content">
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-12">
+          <div class="card">
+            <div class="card-header">
+              <h3 class="card-title">{{tableName}}</h3>
+            </div>
+            <!-- /.card-header -->
+            <div class="card-body">
+              <!-- <span>Tìm Kiếm:</span><input class="form-control" type="text" name="TenSanPham"[(ngModel)]="TenSanPham"
+                (ngModelChange)="Search()"> -->
+              <br>
+              <table id="" class="table table-bordered table-striped">
+                <thead>
+                  <tr>
+                    <th style="    color: white;
+                    font-size: 116%;
+                    font-weight: 600;
+                    background-color: #0d6efd;" class="L1">STT</th>
+                    <th style="    color: white;
+                    font-size: 116%;
+                    font-weight: 600;
+                    background-color: #0d6efd;" class="L1">Ảnh</th>
+                    <th style="    color: white;
+                    font-size: 116%;
+                    font-weight: 600;
+                    background-color: #0d6efd;" class="L1">Sản phẩm</th>
+                    <th style="    color: white;
+                    font-size: 116%;
+                    font-weight: 600;
+                    background-color: #0d6efd;" class="L1">Số lượng</th>
+                    <th style="    color: white;
+                    font-size: 116%;
+                    font-weight: 600;
+                    background-color: #0d6efd;" class="L1">Giá bán</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr
+                    *ngFor="let order of orderDetail  | paginate : { itemsPerPage: 10, currentPage: page, totalItems: totalLength} ; let i=index">
+                    <td style="color: black; font-size:115%; ">{{((page-1)*10)+i+1}}</td>
+                    <td>
+                      <img class="rounded float-start" src="http://localhost:52713/Photos/{{order.HinhAnh}}" alt=""
+                        style="height: 125px; width: 125px">
+                    </td>
+                    <td style="color: black; font-size:115%; ">{{order.TenSanPham}}</td>
+                    <td style="color: black; font-size:115%; ">{{order.SoLuong}}</td>
+                    <td style="color: black; font-size:115%; ">{{order.GiaBan | number}} đ</td>
+
+
+
+                  </tr>
+                </tbody>
+              </table>
+              <pagination-controls previousLabel="Trước" nextLabel="Tiếp" (pageChange)="page = $event">
+              </pagination-controls>
+            </div>
+            <!-- /.card-body -->
+          </div>
+          <!-- /.card -->
+        </div>
+        <!-- /.col -->
+      </div>
+      <!-- /.row -->
+    </div>
+    <!-- /.container-fluid -->
+  </section>
+  <!-- /.content -->
+</div>

@@ -1,0 +1,15 @@
+<div class="modal-body">
+  <div class="col-md-12">
+      <div class="row">
+          <div class="form-group">
+              <label for="TENLOAITIN">Tên loại tin</label>
+              <input id="TENLOAITIN" class="form-control" type="text" [(ngModel)]="TENLOAITIN">
+          </div>
+      </div>
+  </div>
+</div>
+<div class="modal-footer justify-content-between">
+  <button type="button" class="btn btn-outline-primary" data-dismiss="modal">Đóng</button>
+  <button type="button" class="btn btn-primary" (click)="addNow3()" *ngIf="LoaiTinID== 0">Lưu</button>
+  <button type="button" class="btn btn-primary" (click)="editNow3(LoaiTinID)" *ngIf="LoaiTinID != 0">Cập nhật</button>
+</div>

@@ -1,0 +1,102 @@
+<!-- CSS only -->
+<div class="content-wrapper" style="
+  position: relative;
+  top: -669px;
+  left: 37px;">
+  <!-- Content Header (Page header) -->
+  <section class="content-header">
+    <div class="container-fluid">
+      <div class="row mb-2">
+        <div class="col-sm-6">
+          <button type="button" class="btn btn-default" data-toggle="modal" data-target="#modal-xl"
+            (click)="addClick()">
+            Thêm mới loại tin
+          </button>
+          <div class="modal fade" id="modal-xl">
+            <div class="modal-dialog modal-xl">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h4 class="modal-title">{{AddEdit}}</h4>
+                  <button type="button" class="close" data-dismiss="modal" aria-label="Close" (click)="closeClick()">
+
+                    <span aria-hidden="true">&times;</span>
+                  </button>
+                </div>
+                <app-add-edit-lt [obj]="obj" *ngIf="ActivateAddEdit"></app-add-edit-lt>
+
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-sm-6">
+
+        </div>
+      </div>
+    </div>
+  </section>
+  <section class="content">
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-12">
+          <div class="card">
+            <div class="card-header">
+              <h3 class="card-title">{{tableName}}</h3>
+            </div>
+            <!-- /.card-header -->
+            <div class="card-body">
+              <span>Tìm kiếm:</span><input class="form-control" type="text" name="TENLOAITIN" [(ngModel)]="TENLOAITIN"
+                (ngModelChange)="Search()">
+                <br>
+              <table id="" class="table table-bordered table-striped">
+                <thead>
+                  <tr>
+                    <th style="    color: white;
+                    font-size: 116%;
+                    font-weight: 600;
+                    background-color: #0d6efd;" class="L1">STT</th>
+                    <th style="    color: white;
+                    font-size: 116%;
+                    font-weight: 600;
+                    background-color: #0d6efd;" class="L1">Tên loại tin</th>
+                    <th style="    color: white;
+                    font-size: 116%;
+                    font-weight: 600;
+                    background-color: #0d6efd;" class="L1">Trạng thái</th>
+                    <th style="    color: white;
+                    font-size: 116%;
+                    font-weight: 600;
+                    background-color: #0d6efd;" class="L1">Tùy chọn</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr
+                    *ngFor="let sp of listLt | paginate : { itemsPerPage: 10, currentPage: page, totalItems: totalLength}; let i=index">
+                    <td style="color: black; font-size:115%; ">{{((page-1)*10)+i+1}}</td>
+                    <td  style="color: black; font-size:115%; ">{{sp.TENLOAITIN}}</td>
+                    <td  style="color: black; font-size:115%; ">{{sp.TRANGTHAI}}</td>
+                    <td>
+                      <button class="btn btn-primary" (click)="editClick(sp)" data-toggle="modal"
+                        data-target="#modal-xl">Sửa</button> <br> <br>
+
+                      <button class="btn btn-danger" (click)="delClick(sp.LoaiTinID, sp.TENLOAITIN)">Xóa</button>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+              <br>
+              <hr>
+              <pagination-controls previousLabel="Trước" nextLabel="Tiếp" (pageChange)="page = $event">
+              </pagination-controls>
+            </div>
+            <!-- /.card-body -->
+          </div>
+          <!-- /.card -->
+        </div>
+        <!-- /.col -->
+      </div>
+      <!-- /.row -->
+    </div>
+    <!-- /.container-fluid -->
+  </section>
+  <!-- /.content -->
+</div>
